@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json --open",
-    "swa": "npx @azure/static-web-apps-cli start http://localhost:4200 -r 'npm start' -i ./api",
+    "swa": "npx @azure/static-web-apps-cli start http://localhost:4200 -r 'npm start' -i ./api -o",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint"

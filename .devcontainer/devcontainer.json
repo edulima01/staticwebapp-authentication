@@ -1,0 +1,32 @@
+{
+  "name": "staticwebapp-authentication",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": { "VARIANT": "16" }
+  },
+  "forwardPorts": [ 7071, 4200 ],
+  "settings": {},
+  "extensions": [
+    "dbaeumer.vscode-eslint",
+    "ms-azure-devops.azure-pipelines",
+    "ms-azuretools.vscode-azureappservice",
+    "esbenp.prettier-vscode",
+    "eg2.vscode-npm-script",
+    "EditorConfig.EditorConfig",
+    "johnpapa.Angular2",
+    "Angular.ng-template",
+    "Syler.sass-indented",
+    "ritwickdey.live-sass",
+    "hbenl.vscode-test-explorer",
+    "lucono.karma-test-explorer",
+    "ms-vscode.test-adapter-converter",
+    "mhutchie.git-graph",
+    "ms-azuretools.vscode-azurestaticwebapps"
+  ],
+  "remoteUser": "node",
+  "features": {
+    "azure-cli": {
+      "version": "latest"
+    }
+  }
+}

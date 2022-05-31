@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserInfo } from '../model/user-info';
 
 @Component({
   selector: 'app-nav',
@@ -13,7 +14,27 @@ import { Component } from '@angular/core';
           <span>About</span>
         </a>
       </ul>
+      User:
+      <pre>{{ userInfo | json }}</pre>
     </nav>
   `,
 })
-export class NavComponent {}
+export class NavComponent implements OnInit {
+  userInfo: UserInfo;
+
+  async ngOnInit() {
+    this.userInfo = await this.getUserInfo();
+  }
+
+  async getUserInfo() {
+    try {
+      const response = await fetch('/.auth/me');
+      const payload = await response.json();
+      const { clientPrincipal } = payload;
+      return clientPrincipal;
+    } catch (error) {
+      console.error('No profile could be found');
+      return undefined;
+    }
+  }
+}

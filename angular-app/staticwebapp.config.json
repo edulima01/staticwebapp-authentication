@@ -1,4 +1,18 @@
 {
+  "routes": [
+    {
+      "route": "/api/login",
+      "redirect": "/.auth/login/smartPlanProvider"
+    },
+    {
+      "route": "/api/logout",
+      "redirect": "/.auth/logout"
+    },
+    {
+      "route": "/api/me",
+      "redirect": "/.auth/me"
+    }
+  ],
   "navigationFallback": {
     "rewrite": "/index.html",
     "exclude": ["*.{css,scss,js,png,gif,ico,jpg,svg}"]
